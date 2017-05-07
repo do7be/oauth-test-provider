@@ -1,0 +1,21 @@
+{
+  "name": "Sample - OAuth",
+  "version": "1.0.6",
+  "description": "hoge",
+  "background": {
+    "scripts": [
+      "index.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": ""
+  },
+  "permissions": [
+    "tabs",
+    "https://shrouded-ravine-50926.herokuapp.com/*"
+  ],
+  "web_accessible_resources": [
+    "oauth_callback.html"
+  ],
+  "manifest_version": 2
+}
