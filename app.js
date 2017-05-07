@@ -146,7 +146,7 @@ app.get('/secret', function(req, res, next) {
   }
 });
 
-app.listen(8081);
+app.listen(process.env.PORT || 8081);
 
 function escape_entities(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
