@@ -1,7 +1,6 @@
 var OAuth2Provider = require('oauth2-provider').OAuth2Provider,
   express = require('express'),
   session = require('express-session'),
-  MemoryStore = require('express-session').MemoryStore,
   bodyParser = require('body-parser'),
   cookieParser = require('cookie-parser');
 
@@ -104,7 +103,7 @@ myOAP.on('client_auth', function(client_id, client_secret, username, password, n
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.query());
 app.use(cookieParser());
-app.use(session({ store: new MemoryStore({ reapInterval: 5 * 60 * 1000 }), secret: 'abracadabra', resave: true, saveUninitialized: true }));
+app.use(session({ secret: 'abracadabra', resave: true, saveUninitialized: true }));
 app.use(myOAP.oauth());
 app.use(myOAP.login());
 
